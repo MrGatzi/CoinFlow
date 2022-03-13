@@ -1,9 +1,17 @@
 .accountNodeContent {
     text-align: center;
     padding: 15px;
-
     border-width: thin;
     border-style: solid;
     border-radius: 15px;
     border-color: #000000;
+}
+
+.accountNodeContentSelected {
+    text-align: center;
+    padding: 15px;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: red;
 }
