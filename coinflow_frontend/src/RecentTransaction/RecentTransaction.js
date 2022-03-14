@@ -1,6 +1,6 @@
 import './RecentTransaction.css';
 import React from 'react';
-import {ListItem, ListItemButton} from "@mui/material";
+import {ListItemButton} from "@mui/material";
 import axios from "axios";
 
 export class RecentTransaction extends React.Component {

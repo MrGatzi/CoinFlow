@@ -3,7 +3,7 @@ import React from 'react';
 import ReactFlow, {Background, Controls} from 'react-flow-renderer';
 import Button from '@mui/material/Button';
 import axios from 'axios';
-import {AppBar, Drawer, List, TextField} from "@mui/material";
+import { List, TextField} from "@mui/material";
 import AccountNode from './AccountNode/AccountNode';
 import TransactionEdge from './TransactionEdge/TransactionEdge';
 import {RecentTransactionProvider} from "./Context/RecentTransactionContext";
