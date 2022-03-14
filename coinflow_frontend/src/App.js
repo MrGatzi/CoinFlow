@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useCallback, useState} from 'react';
+import React from 'react';
 import ReactFlow from 'react-flow-renderer';
 import Button from '@mui/material/Button';
 import axios from 'axios';
@@ -8,8 +8,6 @@ import AccountNode from './AccountNode/AccountNode';
 import TransactionEdge from './TransactionEdge/TransactionEdge';
 import {RecentTransactionProvider} from "./Context/RecentTransactionContext";
 import {RecentTransaction} from "./RecentTransaction/RecentTransaction";
-import MyTest from "./MyTest";
-import {MyTest2} from "./MyTest2";
 
 
 function getRandomArbitrary(min, max) {
