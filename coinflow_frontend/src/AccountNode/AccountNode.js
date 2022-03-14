@@ -45,7 +45,7 @@ export default memo(({data, isConnectable, selected}) => {
                         direction = "to"
                         address = element.to
                     }
-                    transactions.push({address: address, direction: direction, transaction: element.hash})
+                    transactions.push({address: address, direction: direction, hash: element.hash, value:element.value/ 1000000000000000000})
                 }
                 transactionsContext.update(transactions)
             })
@@ -67,8 +67,7 @@ export default memo(({data, isConnectable, selected}) => {
                 <AccountBoxIcon/>
                 {data.label}
                 {open ? <ExpandLess/> : <ExpandMore/>}
-                <Collapse in={open} timeout="auto" unmountOnExit>
-                </Collapse>
+                <Collapse in={open} timeout="auto" unmountOnExit></Collapse>
             </div>
             <Handle
                 type="source"

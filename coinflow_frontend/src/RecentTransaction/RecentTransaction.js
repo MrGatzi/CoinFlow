@@ -4,16 +4,12 @@ import {ListItem, ListItemButton} from "@mui/material";
 import axios from "axios";
 
 export class RecentTransaction extends React.Component {
-
-    /**
-     * changes and updates the name filter.
-     */
     handleClick = () => {
         var data = JSON.stringify({
             "jsonrpc": "2.0",
             "method": "eth_getTransactionByHash",
             "params": [
-                this.props.transaction
+                this.props.transaction.hash
             ],
             "id": 1
         });
@@ -34,17 +30,26 @@ export class RecentTransaction extends React.Component {
             })
             .catch(function (error) {
                 console.log(error);
+
             });
+    }
+
+    showValue = (value) =>{
+        if(value!=null){
+            return value.toFixed(5)
+        }
     }
 
     render() {
         return (
-            <ListItem key={this.props.index}>
-                <ListItemButton className="recentTransactionContent" onClick={this.handleClick}>
-                    <div>{this.props.direction}</div>
-                    <div>{this.props.address}</div>
-                </ListItemButton>
-            </ListItem>
+            <ListItemButton key={this.props.index} disableGutters divider={true} className="recentTransactionContent"
+                            onClick={this.handleClick}>
+                {this.props.transaction.direction === "from" ?
+                    <span className="recentTransactionDirectionOut">OUT</span> :
+                    <span className="recentTransactionDirectionIn">IN</span>}
+                <div>{this.showValue(this.props.transaction.value)} ETH</div>
+                <div>{this.props.transaction.address}</div>
+            </ListItemButton>
         )
     }
 }

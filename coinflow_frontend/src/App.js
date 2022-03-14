@@ -1,13 +1,14 @@
 import './App.css';
 import React from 'react';
-import ReactFlow from 'react-flow-renderer';
+import ReactFlow, {Background, Controls} from 'react-flow-renderer';
 import Button from '@mui/material/Button';
 import axios from 'axios';
-import {List, TextField} from "@mui/material";
+import {AppBar, Drawer, List, TextField} from "@mui/material";
 import AccountNode from './AccountNode/AccountNode';
 import TransactionEdge from './TransactionEdge/TransactionEdge';
 import {RecentTransactionProvider} from "./Context/RecentTransactionContext";
 import {RecentTransaction} from "./RecentTransaction/RecentTransaction";
+import {SideBar} from "./Sidebar/SideBar";
 
 
 function getRandomArbitrary(min, max) {
@@ -35,7 +36,7 @@ export class App extends React.Component {
             flowInstance: null,
             elements: [],
             searchInput: "0x6e69018194cc5e8354ba1b658c55c2eb5f10e3b6b49ca6b85bb160bf0b33a013",
-            transactions: ["apple"],
+            transactions: [],
         };
     }
 
@@ -128,37 +129,45 @@ export class App extends React.Component {
         this.setState({flowInstance: reactFlowInstance})
     };
 
+    onPaneClick = () => {
+        this.setState({transactions: []})
+    };
 
     render() {
         return (<RecentTransactionProvider value={{value: this.state.transactions, update: this.changeTransactions}}>
             <div className="app">
-                <TextField
-                    className="transactionInput"
-                    variant="standard"
-                    type="search"
-                    label="Enter a ETH transaction"
-                    value={this.state.searchInput}
-                    onChange={this.changeSearchInput}
-                />
-                <Button onClick={this.loadInitialData}>
-                    Gooo!
-                </Button>
+                <div className="appBar">
+                    <TextField
+                        className="transactionInput"
+                        variant="standard"
+                        type="search"
+                        label="Enter a ETH transaction"
+                        value={this.state.searchInput}
+                        onChange={this.changeSearchInput}
+                    />
+                    <Button onClick={this.loadInitialData}>
+                        Gooo!
+                    </Button>
+                </div>
                 <div className="mainContent">
                     <div className="graphRegion">
                         <ReactFlow
                             onLoad={this.onLoad}
                             nodeTypes={nodeTypes}
                             edgeTypes={edgeTypes}
-                            elements={this.state.elements}/>
+                            onPaneClick={this.onPaneClick}
+                            elements={this.state.elements}>
+                            <Controls/>
+                            <Background/>
+                        </ReactFlow>
                     </div>
-                    <div className="transactionRegion">
+                    <SideBar className="sideBarRegion" open={this.state.transactions.length}>
                         <List>
                             {this.state.transactions.map((item, index) => (
-                                <RecentTransaction direction={item.direction} address={item.address}
-                                                   transaction={item.transaction} index={index}
+                                <RecentTransaction transaction={item} index={index}
                                                    newGraph={this.createNewGraphEntry}/>))}
                         </List>
-                    </div>
+                    </SideBar>
                 </div>
             </div>
         </RecentTransactionProvider>);

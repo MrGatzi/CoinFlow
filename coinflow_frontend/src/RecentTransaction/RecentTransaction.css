@@ -1,6 +1,28 @@
 .recentTransactionContent{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin:5px;
+    justify-content: space-between!important;
+    padding: 2%!important;
+    width:100%;
+}
+.recentTransactionDirectionOut{
+    color: #b47d00;
+    background-color: rgba(219,154,4,.2);
+    font-weight: 700;
+    font-size: .65625rem;
+    line-height: 1.7;
+    padding: 0.2rem 0.5rem;
+    display: inline-block;
+    text-transform: uppercase!important;
+}
+
+.recentTransactionDirectionIn{
+    color: #02977e;
+    background-color: rgba(0,201,167,.2);
+    font-weight: 700;
+    font-size: .65625rem;
+    line-height: 1.7;
+    padding: 0.2rem 0.5rem;
+    display: inline-block;
+    text-transform: uppercase!important;
 }

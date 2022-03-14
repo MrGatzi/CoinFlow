@@ -1,20 +1,32 @@
 .app {
     text-align: center;
     height: 100vh;
+    display: flex;
+    flex-direction: column!important;
+
 }
 
 .mainContent {
     display: flex;
     flex-direction: row;
-    height: 92%;
+    height: 100%;
 }
 
 .graphRegion {
-    margin: 5px;
     height: 100%;
-    flex-grow:10;
-    border-style: solid;
-    border-color: #000000;
+    width: 100%;
+}
+
+.sideBarRegion {
+    max-height:  calc(100vh - 100px); ;
+    height: 100%;
+}
+
+.appBar{
+    height: 55px;
+    display: flex;
+    flex-direction: row!important;
+    background-color: #e5eaed;
 }
 
 .transactionRegion {
@@ -23,9 +35,10 @@
     flex-grow: 1;
     border-style: solid;
     border-color: blue;
+    overflow:scroll;
+    overflow-x:hidden;
 }
 
 .transactionInput {
-
     width: 650px
 }
