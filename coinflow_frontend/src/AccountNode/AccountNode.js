@@ -21,10 +21,10 @@ export default memo(({data, isConnectable, selected}) => {
     const [editMode, setEditMode] = React.useState(false);
     const transactionsContext = useContext(RecentTransactionContext)
 
-    useEffect(() => {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line no-use-before-define
+    useEffect((accountBalanceRequest=accountBalanceRequest) => {
         accountBalanceRequest()
-    },[data]);
+    },[data]);      // eslint-disable-next-line react-hooks/exhaustive-deps
 
     function accountTransactionRequest() {
         console.log("Etherscan:");
