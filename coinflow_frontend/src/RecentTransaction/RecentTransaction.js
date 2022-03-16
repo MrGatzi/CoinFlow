@@ -44,7 +44,7 @@ export class RecentTransaction extends React.Component {
         return (
             <ListItemButton key={this.props.index} disableGutters divider={true} className="recentTransactionContent"
                             onClick={this.handleClick}>
-                {this.props.transaction.direction === "from" ?
+                {this.props.transaction.direction === "to" ?
                     <span className="recentTransactionDirectionOut">OUT</span> :
                     <span className="recentTransactionDirectionIn">IN</span>}
                 <div>{this.showValue(this.props.transaction.value)} ETH</div>

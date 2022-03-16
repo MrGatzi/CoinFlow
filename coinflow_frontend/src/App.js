@@ -35,7 +35,7 @@ export class App extends React.Component {
         this.state = {
             flowInstance: null,
             elements: [],
-            searchInput: "0x6e69018194cc5e8354ba1b658c55c2eb5f10e3b6b49ca6b85bb160bf0b33a013",
+            searchInput: "0x2eb0df6debc4b7f13801bc2c28ef23bdd3ed326e096de71a4bd8eb185c1aa263",
             transactions: [],
         };
     }
@@ -158,7 +158,6 @@ export class App extends React.Component {
                             onPaneClick={this.onPaneClick}
                             elements={this.state.elements}>
                             <Controls/>
-                            <Background/>
                         </ReactFlow>
                     </div>
                     <SideBar className="sideBarRegion" open={this.state.transactions.length}>

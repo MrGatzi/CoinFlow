@@ -19,6 +19,10 @@ export default function TransactionEdge({id, sourceX, sourceY, targetX, targetY,
         targetY,
     });
 
+    const calculateValue = () =>{
+        return label.toFixed(5) + " eth";
+    }
+
     return (
         <>
             <path
@@ -36,7 +40,7 @@ export default function TransactionEdge({id, sourceX, sourceY, targetX, targetY,
                 requiredExtensions="http://www.w3.org/1999/xhtml"
             >
                 <div className="transactionEdgeContent">
-                    {label}
+                    {calculateValue()}
                 </div>
             </foreignObject>
         </>

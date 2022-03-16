@@ -2,7 +2,7 @@
     background-color: #e5eaed;
     height: 100%;
     max-height:  calc(100vh - 55px); ;
-    width: 400px;
+    width: 550px;
     right: 0;
     overflow-y: auto;
     overflow-x: hidden;
