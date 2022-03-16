@@ -23,7 +23,7 @@ export default memo(({data, isConnectable, selected}) => {
 
     useEffect(() => {
         accountBalanceRequest()
-    },[data]);
+    },[data,accountBalanceRequest]);
 
     function accountTransactionRequest() {
         console.log("Etherscan:");
