@@ -22,7 +22,7 @@ export default memo(({data, isConnectable, selected}) => {
     const transactionsContext = useContext(RecentTransactionContext)
 
     // eslint-disable-next-line no-use-before-define
-    useEffect((accountBalanceRequest=accountBalanceRequest) => {
+    useEffect(() => {
         accountBalanceRequest()
     },[data]);      // eslint-disable-next-line react-hooks/exhaustive-deps
 
