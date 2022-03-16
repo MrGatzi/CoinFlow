@@ -77,10 +77,9 @@ export default memo(({data, isConnectable, selected}) => {
         axios(config)
             .then(function (response) {
                 console.log(JSON.stringify(response.data.data.items));
-                let tokens=response.data.data.items;
-
-                console.log(tokens.find(token=>token.contract_name==="Ether"))
-                setEthValue(tokens.find(token=>token.contract_name==="Ether"))
+                setTokens(response.data.data.items)
+                console.log(tokens)
+                setEthValue(response.data.data.items.find(token=>token.contract_name==="Ether"))
             })
             .catch(function (error) {
                 console.log(error);

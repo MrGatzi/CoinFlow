@@ -158,6 +158,7 @@ export class App extends React.Component {
                             onPaneClick={this.onPaneClick}
                             elements={this.state.elements}>
                             <Controls/>
+                            <Background/>
                         </ReactFlow>
                     </div>
                     <SideBar className="sideBarRegion" open={this.state.transactions.length}>
