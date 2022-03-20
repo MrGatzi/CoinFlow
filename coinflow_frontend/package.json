@@ -34,6 +34,8 @@
       "react-hooks"
     ],
     "rules": {
+      "no-unused-vars": "warn",
+      "no-useless-concat": "warn",
       "react-hooks/exhaustive-deps": 0
     }
   },
