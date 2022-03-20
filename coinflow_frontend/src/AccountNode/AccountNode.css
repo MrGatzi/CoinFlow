@@ -5,6 +5,7 @@
     border-style: solid;
     border-radius: 15px;
     border-color: #000000;
+    max-width: 500px;
 }
 
 .accountNodeContentSelected {
@@ -14,18 +15,54 @@
     border-style: solid;
     border-radius: 15px;
     border-color: red;
+    max-width: 500px;
 }
 
 .accountNodeName {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 10px!important;
-    margin-left: 10px!important;
+    margin-right: 10px !important;
+    margin-left: 10px !important;
     width: 100%;
 }
+
 .accountNodeHeader {
     display: flex;
     flex-direction: row;
+}
+
+.tokenImage {
+    height: 20px;
+    width: 20px;
+    padding-right: 15px;
+}
+.tokenImageHigh {
+    height: 15px;
+    width: 15px;
+    padding-right: 5px;
+}
+.accountBalanceRegion{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+
+.accountNodeRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+}
+.accountNodeValue{
+    padding-right: 25px;
+}
+.accountBalanceSingeTokenRegion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
 }
 

@@ -164,7 +164,7 @@ export class App extends React.Component {
                     <SideBar className="sideBarRegion" open={this.state.transactions.length}>
                         <List>
                             {this.state.transactions.map((item, index) => (
-                                <RecentTransaction transaction={item} index={index}
+                                <RecentTransaction key={index} transaction={item} index={index}
                                                    newGraph={this.createNewGraphEntry}/>))}
                         </List>
                     </SideBar>

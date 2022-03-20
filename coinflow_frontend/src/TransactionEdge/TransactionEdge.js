@@ -20,7 +20,7 @@ export default function TransactionEdge({id, sourceX, sourceY, targetX, targetY,
     });
 
     const calculateValue = () =>{
-        return label.toFixed(5) + " eth";
+        return label.toFixed(5) + " ETH";
     }
 
     return (
