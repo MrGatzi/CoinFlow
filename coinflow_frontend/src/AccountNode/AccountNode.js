@@ -226,7 +226,7 @@ export default memo(({data, isConnectable, selected}) => {
                 <div className="accountBalanceRegion">
                     {highTokens.map((token) => (
                         <div className="accountBalanceSingeTokenRegion">
-                            <img className="tokenImage" src={token.logo_url}/>
+                            <img alt="a" className="tokenImage" src={token.logo_url}/>
                             <span>{getBalance(token)}</span>
                             <span>{getTokenValue(token)}</span>
                         </div>
