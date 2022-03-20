@@ -36,7 +36,15 @@ export default memo(({data, isConnectable, selected}) => {
         console.log("Etherscan:");
         var config = {
             method: 'get',
-            url: 'https://api.etherscan.io/api' + '?module=account' + '&action=txlist' + '&address=' + data.label + '&startblock=0' + '&endblock=99999999' + '&page=1' + '&offset=30' + '&sort=asc' + '&apikey=6X4A7RMH7ABXUDH9KV8UTWRYKFTZDWBJH8',
+            url: 'https://api.etherscan.io/api'
+                + '?module=account'
+                + '&action=txlist'
+                + '&address=' + data.label + '&startblock=0'
+                + '&endblock=99999999'
+                + '&page=1'
+                + '&offset=30'
+                + '&sort=asc'
+                + '&apikey=6X4A7RMH7ABXUDH9KV8UTWRYKFTZDWBJH8',
         };
 
         axios(config)
@@ -198,14 +206,14 @@ export default memo(({data, isConnectable, selected}) => {
                                 renderValue={(selected) => (
                                     <>
                                         {selected.map((value) => (
-                                            <img className="tokenImageHigh" src={value.logo_url}/>
+                                            <img alt="a" className="tokenImageHigh" src={value.logo_url}/>
                                         ))}
                                     </>
                                 )}
                             >
                                 {tokens.map((token, index) => (
                                     <MenuItem key={index} value={token}>
-                                        <img className="tokenImage" src={token.logo_url}/>
+                                        <img alt="a" className="tokenImage" src={token.logo_url}/>
                                         {token.contract_ticker_symbol} {"  "}
                                         {(token.balance / Math.pow(10, token.contract_decimals)).toFixed(5)}
                                     </MenuItem>  //TODO maybe use (@{token.quote_rate}) ? and show qoata as well ?
